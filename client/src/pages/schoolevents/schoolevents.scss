@@ -1,0 +1,22 @@
+@import "../../style.scss";
+
+.schevents{
+    @include themify($themes) {
+        padding: 20px 70px;
+        background-color: themed("bgSoft");
+        min-height: 100vh;
+        color: themed("textColor");
+
+        @include mobile {
+        padding: 10px;
+        }
+
+        @include tablet{
+        padding: 20px;
+        }
+
+        h1 {
+        margin-bottom: 20px;
+        }
+    }
+}

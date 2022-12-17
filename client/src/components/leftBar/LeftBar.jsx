@@ -20,20 +20,24 @@ const LeftBar = () => {
     <div className="leftBar">
       <div className="container">
         <div className="menu">
-          <div className="item">
-            <img src={Friends} alt="" />
-            <span>Student Directory</span>
-          </div>
+          <Link to={'/student-directory'} className="link">
+            <div className="item">
+              <img src={Friends} alt="" />
+              <span>Student Directory</span>
+            </div>
+          </Link>
           <Link to={'/community'} className="link">
             <div className="item">
               <img src={Groups} alt="" />
               <span>Community</span>
             </div>
           </Link>
-          <div className="item">
-            <img src={Market} alt="" />
-            <span>About School</span>
-          </div>
+          <Link to={'/about-school'} className="link">
+            <div className="item">
+              <img src={Market} alt="" />
+              <span>About School</span>
+            </div>
+          </Link>
           {/* <div className="item">
             <img src={Watch} alt="" />
             <span>Watch</span>
@@ -46,17 +50,15 @@ const LeftBar = () => {
         <hr />
         <div className="menu">
           <span>Updates on School</span>
-          <div className="item">
-            <img src={Events} alt="" />
-            <span>Events</span>
-          </div>
+          <Link to={'/school-events'} className="link">
+            <div className="item">
+              <img src={Events} alt="" />
+              <span>Events</span>
+            </div>
+          </Link>
           <div className="item">
             <img src={Gallery} alt="" />
             <span>Gallery</span>
-          </div>
-          <div className="item">
-            <img src={Messages} alt="" />
-            <span>Notification</span>
           </div>
         </div>
         <hr />

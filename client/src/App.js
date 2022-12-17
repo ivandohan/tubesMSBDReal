@@ -17,6 +17,9 @@ import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/authContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Community from "./pages/community/Community";
+import StudentDir from "./pages/studentdir/StudentDir";
+import AboutSchool from "./pages/school/AboutSchool";
+import SchoolEvents from "./pages/schoolevents/SchoolEvents";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -75,6 +78,18 @@ function App() {
         {
           path: "/community",
           element: <Community />,
+        },
+        {
+          path: "/student-directory",
+          element: <StudentDir />,
+        },
+        {
+          path: "/about-school",
+          element: <AboutSchool />,
+        },
+        {
+          path: "/school-events",
+          element: <SchoolEvents />,
         },
         {
           path: "/profile/:id",
