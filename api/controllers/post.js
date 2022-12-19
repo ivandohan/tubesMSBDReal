@@ -2,7 +2,7 @@ import { db } from "../connect.js";
 import jwt from "jsonwebtoken";
 import moment from "moment";
 
-export const getPosts = (req, res) => {
+export const getGeneralPosts = (req, res) => {
   const userId = req.query.userId;
   const token = req.cookies.accessToken;
   if (!token) return res.status(401).json("Not logged in!");
@@ -12,12 +12,44 @@ export const getPosts = (req, res) => {
 
     console.log(userId);
 
-    const q =
-      userId !== "undefined"
-        ? `SELECT p.*, u.id AS userId, name, profilePic FROM posts AS p JOIN users AS u ON (u.id = p.userId) WHERE p.userId = ? ORDER BY p.createdAt DESC`
-        : `SELECT p.*, u.id AS userId, name, profilePic FROM posts AS p JOIN users AS u ON (u.id = p.userId)
-    LEFT JOIN relationships AS r ON (p.userId = r.followedUserId) WHERE r.followerUserId= ? OR p.userId =?
-    ORDER BY p.createdAt DESC`;
+    const q = userId !== "undefined"
+    ?
+    `SELECT * FROM view_general_posts WHERE userId = ?`
+    :
+    `
+      SELECT * FROM view_general_posts
+    `;
+
+    // LEFT JOIN relationships AS r ON (p.userId = r.followedUserId) WHERE r.followerUserId= ? OR p.userId =?
+
+    const values =
+      userId !== "undefined" ? [userId] : [userInfo.id, userInfo.id];
+
+    db.query(q, values, (err, data) => {
+      if (err) return res.status(500).json(err);
+      return res.status(200).json(data);
+    });
+  });
+};
+export const getEventPosts = (req, res) => {
+  const userId = req.query.userId;
+  const token = req.cookies.accessToken;
+  if (!token) return res.status(401).json("Not logged in!");
+
+  jwt.verify(token, "secretkey", (err, userInfo) => {
+    if (err) return res.status(403).json("Token is not valid!");
+
+    console.log(userId);
+
+    const q = userId !== "undefined"
+    ?
+    `SELECT * FROM view_general_posts WHERE userId = ?`
+    :
+    `
+      SELECT * FROM view_event_posts
+    `;
+
+    // LEFT JOIN relationships AS r ON (p.userId = r.followedUserId) WHERE r.followerUserId= ? OR p.userId =?
 
     const values =
       userId !== "undefined" ? [userId] : [userInfo.id, userInfo.id];

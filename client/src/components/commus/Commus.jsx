@@ -3,18 +3,22 @@ import "./commus.scss";
 import { useQuery } from "@tanstack/react-query";
 import { makeRequest } from "../../axios";
 
-const Posts = ({userId}) => {
-  const { isLoading, error, data } = useQuery(["posts"], () =>
-    makeRequest.get("/posts?userId="+userId).then((res) => {
+const Commus = () => {
+  const { isLoading, error, data } = useQuery(["commus"], () =>
+    makeRequest.get("/communities").then((res) => {
       return res.data;
     })
   );
 
   return (
     <div className="commus">
-        <Commu />
+        {error
+        ? "Something went wrong!"
+        : isLoading
+        ? "loading"
+        : data.map((commu) => <Commu commu={commu} key={commu.id} />)}
     </div>
   );
 };
 
-export default Posts;
+export default Commus;

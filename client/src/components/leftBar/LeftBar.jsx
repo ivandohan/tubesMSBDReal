@@ -20,12 +20,12 @@ const LeftBar = () => {
     <div className="leftBar">
       <div className="container">
         <div className="menu">
-          <Link to={'/student-directory'} className="link">
+          {/* <Link to={'/student-directory'} className="link">
             <div className="item">
               <img src={Friends} alt="" />
               <span>Student Directory</span>
             </div>
-          </Link>
+          </Link> */}
           <Link to={'/community'} className="link">
             <div className="item">
               <img src={Groups} alt="" />
@@ -64,14 +64,18 @@ const LeftBar = () => {
         <hr />
         <div className="menu">
           <span>Others</span>
-          <div className="item">
-            <img src={Fund} alt="" />
-            <span>Craft Market</span>
-          </div>
-          <div className="item">
-            <img src={Tutorials} alt="" />
-            <span>Course Schedule</span>
-          </div>
+          <Link to={'/craft-market'} className="link">
+            <div className="item">
+              <img src={Fund} alt="" />
+              <span>Craft Market</span>
+            </div>
+          </Link>
+          <Link to={'/course-schedule'} className="link">
+            <div className="item">
+              <img src={Tutorials} alt="" />
+              <span>Course Schedule</span>
+            </div>
+          </Link>
           <div className="item">
             <img src={Courses} alt="" />
             <span>Courses</span>

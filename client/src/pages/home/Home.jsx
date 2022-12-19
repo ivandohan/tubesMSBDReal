@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      {currentUser.userLevel == "student" ?
+      {currentUser.userLevel == "viewer" ?
         <h1>News</h1> :
         <Share/>
       }

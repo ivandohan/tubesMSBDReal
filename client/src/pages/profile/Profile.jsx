@@ -29,34 +29,6 @@ const Profile = () => {
     })
   );
 
-  const { isLoading: rIsLoading, data: relationshipData } = useQuery(
-    ["relationship"],
-    () =>
-      makeRequest.get("/relationships?followedUserId=" + userId).then((res) => {
-        return res.data;
-      })
-  );
-
-  const queryClient = useQueryClient();
-
-  const mutation = useMutation(
-    (following) => {
-      if (following)
-        return makeRequest.delete("/relationships?userId=" + userId);
-      return makeRequest.post("/relationships", { userId });
-    },
-    {
-      onSuccess: () => {
-        // Invalidate and refetch
-        queryClient.invalidateQueries(["relationship"]);
-      },
-    }
-  );
-
-  const handleFollow = () => {
-    mutation.mutate(relationshipData.includes(currentUser.id));
-  };
-
   return (
     <div className="profile">
       {isLoading ? (
@@ -73,16 +45,8 @@ const Profile = () => {
                 <span>{data.name} {openUpdate ? "TRUE" : "FALSE"}</span>
                 <div className="info">
                 </div>
-                {rIsLoading ? (
-                  "loading"
-                ) : userId === currentUser.id ? (
+                {userId === currentUser.id && (
                   <button onClick={() => setOpenUpdate(!openUpdate)}>update</button>
-                ) : (
-                  <button onClick={handleFollow}>
-                    {relationshipData.includes(currentUser.id)
-                      ? "Following"
-                      : "Follow"}
-                  </button>
                 )}
               </div>
             </div>

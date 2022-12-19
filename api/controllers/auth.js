@@ -16,13 +16,11 @@ export const register = (req, res) => {
     const hashedPassword = bcrypt.hashSync(req.body.password, salt);
 
     const q =
-      "INSERT INTO users (`username`,`email`,`password`,`name`) VALUE (?)";
+      "INSERT INTO users (`username`,`password`) VALUE (?)";
 
     const values = [
       req.body.username,
-      req.body.email,
       hashedPassword,
-      req.body.name,
     ];
 
     db.query(q, [values], (err, data) => {
@@ -33,7 +31,23 @@ export const register = (req, res) => {
 };
 
 export const login = (req, res) => {
-  const q = "SELECT * FROM users WHERE username = ?";
+  const q = `
+    SELECT 
+      u.id AS id, 
+      u.username AS username,
+      u.userLevel AS userLevel, 
+      u.password AS password,
+      ud.name AS name, 
+      ud.coverPic AS coverPic, 
+      ud.profilePic AS profilePic, 
+      sl.level AS level
+    FROM users AS U 
+    JOIN userdetails as ud ON (ud.userId = u.id) 
+    JOIN schoollevel as sl ON (sl.id = ud.schLevelId)
+    WHERE u.username = ?
+  `;
+
+  // const q = `SELECT * FROM users WHERE username = ?`;
 
   db.query(q, [req.body.username], (err, data) => {
     if (err) return res.status(500).json(err);

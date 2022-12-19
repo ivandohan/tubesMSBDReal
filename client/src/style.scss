@@ -23,6 +23,12 @@ $themes: (
   ),
 );
 
+@mixin media() {
+  @media (min-width: 768px) {
+      @content;
+  }
+}
+
 @mixin themify($themes) {
   @each $theme, $map in $themes {
     .theme-#{$theme} & {

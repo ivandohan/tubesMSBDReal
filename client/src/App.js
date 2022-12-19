@@ -20,6 +20,10 @@ import Community from "./pages/community/Community";
 import StudentDir from "./pages/studentdir/StudentDir";
 import AboutSchool from "./pages/school/AboutSchool";
 import SchoolEvents from "./pages/schoolevents/SchoolEvents";
+import CraftMarket from "./pages/craftmarket/CraftMarket";
+import CourseSchedule from "./pages/courseschedule/CourseSchedule";
+import CommuDetail from "./pages/commudetail/CommuDetail";
+import DirDetails from "./pages/DirDetails/DirDetails";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -80,8 +84,16 @@ function App() {
           element: <Community />,
         },
         {
+          path: "/community/:id",
+          element: <CommuDetail />,
+        },
+        {
           path: "/student-directory",
           element: <StudentDir />,
+        },
+        {
+          path: "/student-directory/:id",
+          element: <DirDetails />,
         },
         {
           path: "/about-school",
@@ -90,6 +102,14 @@ function App() {
         {
           path: "/school-events",
           element: <SchoolEvents />,
+        },
+        {
+          path: "/craft-market",
+          element: <CraftMarket />,
+        },
+        {
+          path: "/course-schedule",
+          element: <CourseSchedule />,
         },
         {
           path: "/profile/:id",

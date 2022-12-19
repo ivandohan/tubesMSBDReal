@@ -85,10 +85,14 @@ const Post = ({ post }) => {
               <span className="date">{moment(post.createdAt).fromNow()}</span>
             </div>
           </div>
-          <MoreHorizIcon onClick={() => setMenuOpen(!menuOpen)} />
-          {menuOpen && post.userId === currentUser.id && (
-            <button onClick={handleDelete}>delete</button>
-          )}
+          {
+            (currentUser.userLevel === "admin" || currentUser.id == post.userId) &&
+            <MoreHorizIcon onClick={() => setMenuOpen(!menuOpen)} />
+          }
+          {
+            menuOpen && (currentUser.userLevel === "admin" || currentUser.id == post.userId) &&
+            <button onClick={handleDelete}>Delete</button>
+          }
         </div>
         <div className="content">
           <p>{post.descr}</p>

@@ -1,0 +1,45 @@
+SELECT 
+	u.id AS id, 
+    u.username AS username,
+    u.userLevel AS userLevel, 
+    ud.name AS name, 
+    ud.label AS label, 
+    ud.coverPic AS coverPic, 
+    ud.profilePic AS profilePic, 
+    sl.level AS level
+FROM users AS U 
+JOIN userdetails as ud ON (ud.userId = u.id) 
+JOIN schoollevel as sl ON (sl.id = ud.schLevelId)
+WHERE u.username = "test3";
+
+
+SELECT
+  p.*,
+  u.id AS userId, 
+  ud.name AS name, 
+  ud.profilePic AS profilePic 
+FROM posts AS p
+JOIN users AS u ON (u.id = p.userId)
+JOIN userdetails AS ud ON (ud.userId = u.id)
+ORDER BY p.createdAt DESC
+
+CREATE VIEW view_general_posts AS
+SELECT
+  p.*,
+  ud.name AS name, 
+  ud.profilePic AS profilePic 
+FROM posts AS p
+JOIN userdetails AS ud ON (ud.userId = p.userId)
+ORDER BY p.createdAt DESC
+
+SELECT 
+  c.id AS id,
+  c.descr AS descr,
+  c.createdAt AS createdAt,
+  c.postId AS postId,
+  ud.userId AS userId,
+  ud.name AS name,
+  ud.label AS label,
+  ud.profilePic AS profilePic
+FROM comments AS c 
+JOIN userdetails AS ud ON (ud.userId = c.userId)
