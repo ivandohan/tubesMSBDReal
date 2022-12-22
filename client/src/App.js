@@ -21,9 +21,9 @@ import StudentDir from "./pages/studentdir/StudentDir";
 import AboutSchool from "./pages/school/AboutSchool";
 import SchoolEvents from "./pages/schoolevents/SchoolEvents";
 import CraftMarket from "./pages/craftmarket/CraftMarket";
-import CourseSchedule from "./pages/courseschedule/CourseSchedule";
 import CommuDetail from "./pages/commudetail/CommuDetail";
 import DirDetails from "./pages/DirDetails/DirDetails";
+import SchoolAch from "./pages/ach/SchoolAch";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -108,8 +108,8 @@ function App() {
           element: <CraftMarket />,
         },
         {
-          path: "/course-schedule",
-          element: <CourseSchedule />,
+          path: "/achievement",
+          element: <SchoolAch />,
         },
         {
           path: "/profile/:id",

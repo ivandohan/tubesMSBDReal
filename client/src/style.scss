@@ -2,6 +2,14 @@
   text-decoration: none;
 }
 
+.link-color {
+  color: white;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
 $themes: (
   light: (
     textColor: #000,

@@ -18,7 +18,7 @@ const Commu = ({ commu }) => {
                     </div>
                     <h6>{commu.year}</h6>
                     <h2>{commu.motto}</h2>
-                    <button class="btn">Member Info</button>
+                    {/* <button class="btn">Member Info</button> */}
                 </div>
             </div>
         </div>

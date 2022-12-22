@@ -70,16 +70,12 @@ const LeftBar = () => {
               <span>Craft Market</span>
             </div>
           </Link>
-          <Link to={'/course-schedule'} className="link">
+          <Link to={'/achievement'} className="link">
             <div className="item">
               <img src={Tutorials} alt="" />
-              <span>Course Schedule</span>
+              <span>Achievements</span>
             </div>
           </Link>
-          <div className="item">
-            <img src={Courses} alt="" />
-            <span>Courses</span>
-          </div>
         </div>
       </div>
     </div>

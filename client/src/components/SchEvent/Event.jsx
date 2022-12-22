@@ -61,7 +61,7 @@ const Event = ({ post }) => {
   };
 
   return (
-    <div className="post">
+    <div className="event">
       <div className="container">
         <div className="user">
           <div className="userInfo">
@@ -82,7 +82,7 @@ const Event = ({ post }) => {
               >
                 <span className="name">{post.name}</span>
               </Link>
-              <span className="date">{moment(post.createdAt).fromNow()}</span>
+              <span className="date">{moment(post.createdAt).fromNow()} | <strong>{post.category}</strong></span>
             </div>
           </div>
           <MoreHorizIcon onClick={() => setMenuOpen(!menuOpen)} />

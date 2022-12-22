@@ -2,6 +2,8 @@ import { Link, useLocation } from "react-router-dom"
 import { useQuery } from "@tanstack/react-query";
 import { makeRequest } from "../../axios";
 import "./commudetail.scss"
+// import Post from "../../components/post/Post";
+import Posts from "../../components/posts/Posts";
 
 const CommuDetail = () => {
     const communityId = parseInt(useLocation().pathname.split("/")[2]);
@@ -24,8 +26,9 @@ const CommuDetail = () => {
                     <div className="vm">
                         <h2>Mission</h2>
                         <p>{detail.mission}</p>
+                        {/* <span>{detail.userId}</span> */}
                     </div>
-                    <div className="vm">
+                    {/* <div className="vm">
                         <h2>Members</h2>
                         <div class="table-wrapper" id="1">
                             <table class="fl-table">
@@ -60,10 +63,19 @@ const CommuDetail = () => {
                                 </tbody>
                             </table>
                         </div>
-                    </div>
+                    </div> */}
+                    {/* <div className="commu-post">
+                        {
+                            error ? "Something went wrong!" : isLoading ? "loading..." :
+                            <Posts userId={detail.userId} />
+                        }
+                    </div> */}
                 </>
             ))}
 
+            <div className="commu-post">
+                <Posts userId={communityId}/>
+            </div>
         </div>
     )
 }

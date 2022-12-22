@@ -31,11 +31,9 @@ const Login = () => {
     <div className="login">
       <div className="card">
         <div className="left">
-          <h1>Hello World.</h1>
+          <h1>Nur Media</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero cum,
-            alias totam numquam ipsa exercitationem dignissimos, error nam,
-            consequatur.
+          " Pengetahuan adalah kekuatan. Informasi membebaskan. Pendidikan adalah premis kemajuan, di setiap masyarakat, di setiap keluarga." - Kofi Annan
           </p>
           <span>Don't you have an account?</span>
           <Link to="/register">

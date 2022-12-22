@@ -23,7 +23,7 @@ export const getCommunityDetails = (req, res) => {
     const comId = req.params.comId;
     console.log(comId)
     const q = `
-        SELECT * FROM communitydetails WHERE userId = ?
+        SELECT * FROM view_community_details WHERE userId = ?
     `;
 
     db.query(q, [comId], (err, data) => {

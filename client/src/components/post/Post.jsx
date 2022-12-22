@@ -26,6 +26,12 @@ const Post = ({ post }) => {
     })
   );
 
+  const { isLoading2, error2, numOflikes } = useQuery(["likes", post.id], () =>
+    makeRequest.get("/likes/num-of-likes?postId=" + post.id).then((res) => {
+      return res.data;
+    })
+  );
+  
   const queryClient = useQueryClient();
 
   const mutation = useMutation(
@@ -82,7 +88,7 @@ const Post = ({ post }) => {
               >
                 <span className="name">{post.name}</span>
               </Link>
-              <span className="date">{moment(post.createdAt).fromNow()}</span>
+              <span className="date">{moment(post.createdAt).fromNow()} | <strong>{post.category}</strong></span>
             </div>
           </div>
           {

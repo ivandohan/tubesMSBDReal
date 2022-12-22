@@ -31,6 +31,37 @@
         margin-bottom: 20px;
         background-color: themed("bg");
 
+        .upcoming {
+          // border-radius: 20px;
+          background-color: themed("bg");
+          color: themed("textColor");
+          margin-top: 10px;
+          // border: 1px solid gray;
+          padding: 5px;
+          display: flex;
+          flex-direction: column;
+
+          h2 {
+            font-size: 15px;
+            color: themed("textColor");
+          }
+
+          h3 {
+            font-size: 14px;
+            font-weight: 500;
+            color: themed("textColor");
+            margin-bottom: 5px;
+          }
+
+          img {
+            width: 320px;
+            height: 240px;
+            object-fit: cover;
+            margin-top: 7px;
+            // padding: 5px;
+          }
+        }
+
         span {
           color: gray;
         }

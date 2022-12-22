@@ -43,3 +43,75 @@ SELECT
   ud.profilePic AS profilePic
 FROM comments AS c 
 JOIN userdetails AS ud ON (ud.userId = c.userId)
+
+
+SELECT 
+	p.id,
+    p.productName,
+    p.descr,
+    p.image,
+    ud.name AS producerName
+FROM products AS p
+JOIN userdetails AS ud ON (p.producer = ud.userId)
+
+CREATE VIEW view_community_detail AS
+SELECT
+	cd.id,
+    cd.userId,
+    cd.fullname,
+    cd.vission,
+    cd.mission,
+    cd.motto,
+    cd.year,
+    sl.level
+FROM communitydetails AS cd
+JOIN schoollevel AS sl ON (sl.id = cd.schLevelId)
+
+CREATE FUNCTION get_numOf_likes (
+    post_id INT
+) RETURNS INT
+BEGIN
+	DECLARE numOf_likes INT;
+	SET numOf_likes = (SELECT COUNT(userId) FROM likes WHERE postId = 2);
+    RETURN numOf_likes;
+END
+
+CREATE PROCEDURE add_new_post(
+	description VARCHAR(200),
+    image VARCHAR(200),
+    createdAtTime DATETIME,
+    user_Id INT,
+    catgry VARCHAR(15)
+)
+BEGIN
+	INSERT INTO posts(`descr`, `img`, `createdAt`, `userId`, `category`) VALUES (description, image, createdAtTime, user_Id, catgry);
+END
+
+CREATE FUNCTION get_user_name(user_id INT)
+RETURNS VARCHAR(100)
+BEGIN
+	DECLARE user_name VARCHAR(100);
+    SET user_name = (SELECT name FROM userdetails WHERE userId=user_id);
+    RETURN user_name;
+END
+
+CREATE TRIGGER trigg_insert_new_post
+AFTER INSERT ON posts
+FOR EACH ROW
+BEGIN
+	DECLARE creatorName VARCHAR(100);
+    DECLARE descr_notif VARCHAR(200);
+    
+    SET creatorName = (SELECT get_user_name(NEW.userId));
+    
+    IF(NEW.category = "story") THEN SET descr_notif = CONCAT(creatorName, " just posted a new story.");
+    END IF;
+    IF(NEW.category = "event") THEN SET descr_notif = CONCAT(creatorName + " just posted a new event.");
+    END IF;
+    IF(NEW.category = "news") THEN SET descr_notif = CONCAT(creatorName + "just announced something new.");
+    END IF;
+    
+    INSERT INTO log_inserted_post (name, descr, insertedAt) VALUES (creatorName, descr_notif, NEW.createdAt);
+
+END
+    

@@ -30,6 +30,15 @@ export const addLike = (req, res) => {
   });
 };
 
+export const getNumOfLikes = (req, res) => {
+  const q = "SELECT get_numOf_likes(?) AS numOfLikes";
+
+  db.query(q, [req.query.postId], (err, data) => {
+    if (err) return res.status(500).json(err);
+    return res.status(200).json(data);
+  });
+}
+
 export const deleteLike = (req, res) => {
 
   const token = req.cookies.accessToken;

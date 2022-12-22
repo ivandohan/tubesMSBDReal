@@ -72,6 +72,15 @@
             gap: 10px;
             cursor: pointer;
 
+            button {
+              border: none;
+              padding: 5px;
+              color: black;
+              cursor: pointer;
+              background-color: #52f1ff;
+              border-radius: 3px;
+            }
+
             img {
               height: 20px;
             }
