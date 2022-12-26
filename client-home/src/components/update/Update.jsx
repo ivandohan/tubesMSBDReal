@@ -45,16 +45,19 @@ const Update = ({ setOpenUpdate, user }) => {
     e.preventDefault();
 
     //TODO: find a better way to get image URL
-    
-    let coverUrl;
-    let profileUrl;
-    coverUrl = cover ? await upload(cover) : user.coverPic;
-    profileUrl = profile ? await upload(profile) : user.profilePic;
-    
-    mutation.mutate({ ...texts, coverPic: coverUrl, profilePic: profileUrl });
-    setOpenUpdate(false);
-    setCover(null);
-    setProfile(null);
+    const isConfirmed = window.confirm("Are you sure about that?")
+
+    if(isConfirmed) {
+      let coverUrl;
+      let profileUrl;
+      coverUrl = cover ? await upload(cover) : user.coverPic;
+      profileUrl = profile ? await upload(profile) : user.profilePic;
+      
+      mutation.mutate({ ...texts, coverPic: coverUrl, profilePic: profileUrl });
+      setOpenUpdate(false);
+      setCover(null);
+      setProfile(null);
+    }
   }
 
   return (

@@ -36,10 +36,13 @@ const SchDetail = () => {
         // order.price = (order.quantity * parseInt(searchParam.get('cp')))
         setPrc(order.quantity * parseInt(searchParam.get('cp')))
         try {
-            const res = await makeRequest.post("/markets", order)
-            setRespon(res.data)
-            setSuccess(true)
-            console.log(res.data)
+            const isConfirmed = window.confirm("Are you sure about that?")
+            if(isConfirmed) {
+                const res = await makeRequest.post("/markets", order)
+                setRespon(res.data)
+                setSuccess(true)
+                console.log(res.data)
+            }
         } catch(err){
             console.log(err);
         }

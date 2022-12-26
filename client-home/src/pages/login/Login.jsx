@@ -9,6 +9,7 @@ const Login = () => {
     password: "",
   });
   const [err, setErr] = useState(null);
+  const [msg, setMsg] = useState(null);
 
   const navigate = useNavigate()
 
@@ -20,7 +21,6 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     try {
-      login(inputs);
       navigate("/home");
     } catch (err) {
       setErr(err.response.data);
