@@ -14,31 +14,33 @@ const Market = () => {
     return (
         <div className="market">
             {error ? "Something went wrong!" : isLoading ? "loading.." : data.map((product) => (
-            <div className="market-container">
-                <div class="product-details">
-                    <h1>{product.productName}</h1>
-                    <p class="information">" {product.descr}</p>
-                    <div class="control">                
-                        <button class="btn">
-                            <span class="price">Rp.{product.price}</span>
-                            <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
-                            <span class="buy">Pesan</span>
-                        </button>
+                <div className="market-container">
+                    <div class="product-details">
+                        <h1>{product.productName}</h1>
+                        <p class="information">" {product.descr}</p>
+                        <div class="control">
+                            <Link to={`/craft-market/${product.id}?cp=${product.price}`} className="link">
+                                <button class="btn">
+                                    <span class="price">Rp.{product.price}</span>
+                                    <span class="shopping-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></span>
+                                    <span class="buy">Pesan</span>
+                                </button>
+                            </Link>        
+                        </div>
+                    </div>
+                        
+                    <div class="product-image">                
+                        <img src={'/upload/' + product.image} alt="" />
+                        <div class="info">
+                            <h2>Producer</h2>
+                            <ul>
+                                <li>
+                                    <Link to={"/profile/" + product.userId} className="link link-color"><strong>{product.producerName}</strong></Link>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                    
-                <div class="product-image">                
-                    <img src={'/upload/' + product.image} alt="" />
-                    <div class="info">
-                        <h2>Producer</h2>
-                        <ul>
-                            <li>
-                                <Link to={"/profile/" + product.userId} className="link link-color"><strong>{product.producerName}</strong></Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
             ))}
 
         </div>

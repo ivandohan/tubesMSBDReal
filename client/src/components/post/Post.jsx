@@ -26,12 +26,6 @@ const Post = ({ post }) => {
     })
   );
 
-  const { isLoading2, error2, numOflikes } = useQuery(["likes", post.id], () =>
-    makeRequest.get("/likes/num-of-likes?postId=" + post.id).then((res) => {
-      return res.data;
-    })
-  );
-  
   const queryClient = useQueryClient();
 
   const mutation = useMutation(
@@ -46,6 +40,7 @@ const Post = ({ post }) => {
       },
     }
   );
+
   const deleteMutation = useMutation(
     (postId) => {
       return makeRequest.delete("/posts/" + postId);
@@ -63,7 +58,7 @@ const Post = ({ post }) => {
   };
 
   const handleDelete = () => {
-    deleteMutation.mutate(post.id);
+    if(window.confirm("Are you sure about that?")) deleteMutation.mutate(post.id);
   };
 
   return (
@@ -93,11 +88,12 @@ const Post = ({ post }) => {
           </div>
           {
             (currentUser.userLevel === "admin" || currentUser.id == post.userId) &&
-            <MoreHorizIcon onClick={() => setMenuOpen(!menuOpen)} />
+            <MoreHorizIcon onClick={() => setMenuOpen(!menuOpen)} className="pointer"/>
           }
           {
-            menuOpen && (currentUser.userLevel === "admin" || currentUser.id == post.userId) &&
-            <button onClick={handleDelete}>Delete</button>
+            menuOpen && 
+              (currentUser.userLevel === "admin" || currentUser.id == post.userId) &&
+              <button onClick={handleDelete}>Delete</button>
           }
         </div>
         <div className="content">

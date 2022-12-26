@@ -24,6 +24,8 @@ import CraftMarket from "./pages/craftmarket/CraftMarket";
 import CommuDetail from "./pages/commudetail/CommuDetail";
 import DirDetails from "./pages/DirDetails/DirDetails";
 import SchoolAch from "./pages/ach/SchoolAch";
+import SchDetail from "./pages/schdetail/SchDetail";
+import Orders from "./pages/orders/Orders";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -100,12 +102,20 @@ function App() {
           element: <AboutSchool />,
         },
         {
+          path: "/school-detail/:id",
+          element: <SchDetail/>,
+        },
+        {
           path: "/school-events",
           element: <SchoolEvents />,
         },
         {
           path: "/craft-market",
           element: <CraftMarket />,
+        },
+        {
+          path: "/craft-market/:id",
+          element: <Orders />,
         },
         {
           path: "/achievement",

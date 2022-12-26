@@ -53,10 +53,10 @@ const Navbar = () => {
           <DarkModeOutlinedIcon onClick={toggle} className="pointer"/>
         )}
         {/* <GridViewOutlinedIcon /> */}
-        <div className="search">
+        {/* <div className="search">
           <SearchOutlinedIcon className="pointer"/>
           <input type="text" placeholder="Search..." />
-        </div>
+        </div> */}
       </div>
       <div className="right">
         {/* <PersonOutlinedIcon className="pointer"/> */}

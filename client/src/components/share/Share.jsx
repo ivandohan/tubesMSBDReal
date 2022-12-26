@@ -110,12 +110,17 @@ const Share = () => {
               <img src={Friend} alt="" />
               <button onClick={() => setIsEvent(!isEvent)}>Mark As {isEvent ? "Story" : "Event"}</button>
             </div>
-            <div className="item">
-              <span>Is an Achievement ?</span>
-            </div>
-            <div className="item">
-              <button onClickCapture={() => setIsAchievement(!isAchievement)}>{isAchievement ? "Yes" : "No"}</button>
-            </div>
+            {
+              !isEvent && 
+              <>
+                <div className="item">
+                  <span>Is an Achievement ?</span>
+                </div>
+                <div className="item">
+                  <button onClickCapture={() => setIsAchievement(!isAchievement)}>{isAchievement ? "Yes" : "No"}</button>
+                </div>
+              </>
+            }
           </div>
           <div className="right">
             <button onClick={handleClick}>Share</button>

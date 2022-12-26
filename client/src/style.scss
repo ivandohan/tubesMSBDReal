@@ -1,5 +1,6 @@
 .link {
   text-decoration: none;
+
 }
 
 .link-color {
@@ -8,6 +9,15 @@
 
 .pointer {
   cursor: pointer;
+}
+
+.smallSpan {
+  font-size: 11px;
+  margin-left: 10px;
+  background-color: gray;
+  padding: 4px;
+  color: white;
+  border-radius: 10px;
 }
 
 $themes: (

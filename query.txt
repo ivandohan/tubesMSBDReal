@@ -39,10 +39,11 @@ SELECT
   c.postId AS postId,
   ud.userId AS userId,
   ud.name AS name,
-  ud.label AS label,
-  ud.profilePic AS profilePic
+  ud.profilePic AS profilePic,
+  sl.shortname AS label
 FROM comments AS c 
 JOIN userdetails AS ud ON (ud.userId = c.userId)
+JOIN schoollevel AS sl ON (sl.id = ud.schLevelId)
 
 
 SELECT 
@@ -72,7 +73,7 @@ CREATE FUNCTION get_numOf_likes (
 ) RETURNS INT
 BEGIN
 	DECLARE numOf_likes INT;
-	SET numOf_likes = (SELECT COUNT(userId) FROM likes WHERE postId = 2);
+	SET numOf_likes = (SELECT COUNT(userId) FROM likes WHERE postId = post_id);
     RETURN numOf_likes;
 END
 
@@ -106,12 +107,54 @@ BEGIN
     
     IF(NEW.category = "story") THEN SET descr_notif = CONCAT(creatorName, " just posted a new story.");
     END IF;
-    IF(NEW.category = "event") THEN SET descr_notif = CONCAT(creatorName + " just posted a new event.");
+    IF(NEW.category = "event") THEN SET descr_notif = CONCAT(creatorName, " just posted a new event.");
     END IF;
-    IF(NEW.category = "news") THEN SET descr_notif = CONCAT(creatorName + "just announced something new.");
+    IF(NEW.category = "news") THEN SET descr_notif = CONCAT(creatorName, "just announced something new.");
     END IF;
     
-    INSERT INTO log_inserted_post (name, descr, insertedAt) VALUES (creatorName, descr_notif, NEW.createdAt);
+    INSERT INTO log_activities (name, descr, insertedAt) VALUES (creatorName, descr_notif, NEW.createdAt);
 
 END
+
+CREATE PROCEDURE add_new_order(
+    customer_id INT,
+    ordered_at DATETIME,
+    cnotes VARCHAR(250),
+    stts VARCHAR(15),
+	product_Id INT,
+    qtty INT,
+    prc INT,
+    addr VARCHAR(250)
+)
+BEGIN
+	DECLARE orderNumber INT;
+
+    SET orderNumber = (SELECT MAX(id)+1 FROM orders);
     
+    START TRANSACTION;
+    INSERT INTO orders VALUES (
+    	orderNumber, customer_id, ordered_at, cnotes, stts
+    );
+
+    INSERT INTO orderdetails VALUES (
+    	orderNumber, product_id, qtty, prc*qtty, addr
+    );
+    COMMIT;
+    
+END
+
+
+CREATE PROCEDURE add_new_user(
+	uname VARCHAR(45),
+    pass VARCHAR(200),
+    ulevel VARCHAR(15),
+    user_name VARCHAR(100),
+    sch_id INT
+)
+BEGIN
+	DECLARE usersNum INT;
+	SET usersNum = (SELECT MAX(id)+1 FROM users);
+    INSERT INTO users (id, username, password, userlevel, status) VALUES (usersNum, uname, pass, ulevel, "waiting");
+    
+    INSERT INTO userdetails (userId, name, schLevelId) VALUES (usersNum, user_name, sch_id);
+END

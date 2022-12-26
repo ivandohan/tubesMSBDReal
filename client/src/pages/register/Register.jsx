@@ -1,14 +1,21 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./register.scss";
 import axios from "axios";
 
 const Register = () => {
   const [inputs, setInputs] = useState({
     username: "",
+    name: "",
+    schLevelId: "",
+    userLevel: "",
     password: "",
   });
+
+  const navigate = useNavigate();
+
   const [err, setErr] = useState(null);
+  const [msg, setMsg] = useState("")
 
   const handleChange = (e) => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -18,7 +25,8 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:8800/api/auth/register", inputs);
+      const res = await axios.post("http://localhost:8800/api/auth/register", inputs);
+      setMsg(res.data)
     } catch (err) {
       setErr(err.response.data);
     }
@@ -40,12 +48,34 @@ const Register = () => {
           </Link>
         </div>
         <div className="right">
+          {
+            msg &&
+            <span>{msg}</span>
+          }
           <h1>Register</h1>
           <form>
             <input
               type="text"
               placeholder="Username"
               name="username"
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              placeholder="Full Name"
+              name="name"
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              placeholder="School Level"
+              name="schLevelId"
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              placeholder="User Level"
+              name="userLevel"
               onChange={handleChange}
             />
             <input

@@ -26,12 +26,11 @@ const RightBar = () => {
     })
   );
 
-
   return (
     <div className="rightBar">
       <div className="container">
         <div className="item">
-          <span>Upcoming Events</span>
+          <span>Upcoming Events </span>
           {
             error ? "something went wrong" : isLoading ? "loading..." :
             <div className="upcoming">
@@ -67,7 +66,7 @@ const RightBar = () => {
           }
         </div>
         <div className="item">
-          <span>Quotes of the Day</span>
+          <span>Quotes of the Month</span>
           <div className="upcoming">
             <h3>“ Hiduplah seolah-olah kamu akan mati besok. Belajarlah seolah-olah Anda akan hidup selamanya” - Mahatma Gandhi.</h3>
             <img src="/upload/rickandmorty.jpg" alt="" />

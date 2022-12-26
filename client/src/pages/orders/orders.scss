@@ -1,0 +1,119 @@
+
+@import "../../style.scss";
+
+.schdetail {
+    @include themify($themes) {
+        padding: 20px 70px;
+        background-color: themed("bgSoft");
+        min-height: 100vh;
+        color: themed("textColor");
+        
+
+        @include mobile {
+        padding: 10px;
+        }
+
+        @include tablet{
+        padding: 20px;
+        }
+
+        h1 {
+        margin-bottom: 20px;
+        }
+
+        .vm {
+            -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+            -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+            box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+            border-radius: 20px;
+            background-color: themed("bg");
+            color: themed("textColor");
+            padding: 30px;
+            margin-top: 20px;
+
+            p {
+                margin-top: 10px;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+        
+                .files {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 50px;
+                }
+        
+                label {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    color: themed("textColor");
+                    font-size: 14px;
+                    font-weight: 550;
+        
+                    .imgContainer {
+                        position: relative;
+                        img {
+                            width: 100px;
+                            height: 100px;
+                            object-fit: cover;
+                        }
+            
+                        .icon {
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            font-size: 30px;
+                            color: lightgray;
+                            cursor: pointer;
+                        }
+                    }
+                    }
+            
+                    input {
+                        padding: 5px;
+                        border: none;
+                        border-bottom: 1px solid themed("border");
+                        color: themed("textColor");
+                        background-color: transparent;
+                    }
+
+                    textarea {
+                        padding: 10px;
+                        background-color: transparent;
+                        color: themed("textColor");
+                    }
+            
+                    button {
+                        border: none;
+                        padding: 10px;
+                        cursor: pointer;
+                        color: white;
+                        background-color: #5271ff;
+                    }
+            }
+
+            button {
+                border: none;
+                width: 625px;
+                margin-top: 20px;
+                padding: 10px;
+                cursor: pointer;
+                color: white;
+                background-color: #5271ff;
+            }
+
+        }
+
+        .commu-post {
+            margin-top: 20px;
+        }
+    }
+}
+

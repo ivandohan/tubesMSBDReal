@@ -16,11 +16,14 @@ export const register = (req, res) => {
     const hashedPassword = bcrypt.hashSync(req.body.password, salt);
 
     const q =
-      "INSERT INTO users (`username`,`password`) VALUE (?)";
+      "CALL add_new_user(?)";
 
     const values = [
       req.body.username,
       hashedPassword,
+      req.body.userLevel,
+      req.body.name,
+      req.body.schLevelId
     ];
 
     db.query(q, [values], (err, data) => {
@@ -40,11 +43,11 @@ export const login = (req, res) => {
       ud.name AS name, 
       ud.coverPic AS coverPic, 
       ud.profilePic AS profilePic, 
-      sl.level AS level
+      sl.shortname AS level
     FROM users AS U 
     JOIN userdetails as ud ON (ud.userId = u.id) 
     JOIN schoollevel as sl ON (sl.id = ud.schLevelId)
-    WHERE u.username = ?
+    WHERE u.status = "accepted" AND u.username = ?
   `;
 
   // const q = `SELECT * FROM users WHERE username = ?`;

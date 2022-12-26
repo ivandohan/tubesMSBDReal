@@ -1,0 +1,53 @@
+Pengantar :
+Mitra yang kami tuju sudah memiliki aplikasi website sekolahnya sendiri. Namun saat berdiskusi dengan mitra,
+mereka setuju untuk bekerja sama. Mitra meminta untuk membuat sebuah aplikasi yang berbeda dari website sekolahan
+umumnya. Ditambah lagi, salah satu guru teknologi di SMK mitra kami tersebut memberi saran untuk membuat aplikasi
+yang memberi ruang interaksi sekolah dengan penduduk sekolahnya. Guru tersebut mengusulkan aplikasi seperti
+instagram dengan cakupan ruang yang lebih sempit, hanya penduduk sekolah saja. Guru tersebut juga meminta ada form
+pengumpulan tugas, namun kami membatasinya karena bukan cakupan dari tema yang kami bawakan.
+Juga website ini akan dipakai langsung oleh instansi SMK sebagai bahan ajar teknologi informasi.
+
+
+Arah Aplikasi :
+Aplikasi website dinamis ini dibuat dengan nuansa sosial media. Yang membedakannya dengan sosial media besar dan
+web dinamis sekolah lainnya adalah fokus aplikasi ini terbagi besar untuk memperkenalkan lebih dalam Yayasan ini 
+kepada penduduk sekolah. Informasi terkait sepeti struktur kepengurusan yayasan, biaya sekolah untuk setiap 
+periode bayarnya, ekstrakurikuler dan kegiatannya, jadwal mata pelajaran untuk tiap kelas dari masing-masing 
+instansi, event sekolah dalam waktu dekat.
+
+Stackshare (Tekonologi yang Dipakai) :
+Bingkai kerja halaman website		=> ReactJS
+API Server 					=> Javascript on NodeJS
+Summary					=> Fullstack Javascript
+DBMS						=> MariaDB in XAMPP
+
+Kendala :
+1. Ambigu dalam komunikasi dengan mitra dikarenakan mitra kerap kali melupakan janji dalam serah terima dokumen
+dasar. Ini membuat banyak sekali verifikasi tambahan saat meminta data di luar hasil diskusi sebelumnya.
+2. Beberapa anggota tim melalaikan tugasnya yang mempengaruhi waktu penyelesaian aplikasi.
+
+
+Kekurangan :
+1. Mekanisme untuk user dengan level admin belum selesai
+2. Fitur Registrasi akun masih rampung. Aplikasi ini didesain sebagai sosial media internal mitra
+sehingga ketika seseorang mendaftar harus mendapat persetujuan admin terlebih dahulu.
+3. Fitur edit postingan masih belum tersedia.
+4. Data yang tersimpan masih sedikit. Belum melakukan insert data.
+5. Belum membuat view school management structure untuk melihat nama-nama pengurus sekolah beserta jabatannya
+dan informasi sekolah lainnya.
+6. Postingan dan komentar belum dapat direport.
+7. Validasi dalam program untuk setiap kali event update/delete
+8. Mekanisme admin yang akan diselesaikan :
+	- Terima registrasi akun user
+	- Banned akun user dengan pertimbangan hasil report
+	- Manajemen transaksi produk hasil kerajinan tangan
+	- Quotes of the month
+
+
+
+Fitur baru yang diharapkan untuk update yang akan datang :
+1. Tag orang dalam postingan
+2. Reply komentar
+3. Aplikasi bersifat publik, khalayak umum dapat mengaksesnya dengan mekanisme yang lebih efisien.
+4. Bilah notifikasi untuk tiap likes pada postingan
+5. Field yang menampilkan daftar user yang memberi tanda like pada postingan

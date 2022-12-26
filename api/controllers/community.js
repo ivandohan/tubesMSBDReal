@@ -21,7 +21,6 @@ export const getCommunities = (req, res) => {
 
 export const getCommunityDetails = (req, res) => {
     const comId = req.params.comId;
-    console.log(comId)
     const q = `
         SELECT * FROM view_community_details WHERE userId = ?
     `;

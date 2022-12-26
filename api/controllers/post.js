@@ -40,8 +40,6 @@ export const getEventPosts = (req, res) => {
   jwt.verify(token, "secretkey", (err, userInfo) => {
     if (err) return res.status(403).json("Token is not valid!");
 
-    console.log(userId);
-
     const q = userId !== "undefined"
     ?
     `SELECT * FROM view_general_posts WHERE userId = ?`
@@ -69,8 +67,6 @@ export const getAchPosts = (req, res) => {
 
   jwt.verify(token, "secretkey", (err, userInfo) => {
     if (err) return res.status(403).json("Token is not valid!");
-
-    console.log(userId);
 
     const q = userId !== "undefined"
     ?
@@ -100,7 +96,7 @@ export const getLogPosts = (req, res) => {
       if (err) return res.status(403).json("Token is not valid!");
 
       const q = `
-        SELECT * FROM log_inserted_post ORDER BY insertedAt DESC
+        SELECT * FROM log_activities ORDER BY insertedAt DESC
       `
 
       db.query(q, [], (err, data) => {

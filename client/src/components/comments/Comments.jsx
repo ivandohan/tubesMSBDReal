@@ -55,7 +55,7 @@ const Comments = ({ postId }) => {
             <div className="comment">
               <img src={"/upload/" + comment.profilePic} alt="" />
               <div className="info">
-                <span>{comment.name}</span>
+                <span>{comment.name} <span className="smallSpan">{comment.label}</span></span>
                 <p>{comment.descr}</p>
               </div>
               <span className="date">

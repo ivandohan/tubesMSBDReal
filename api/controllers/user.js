@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 
 export const getUser = (req, res) => {
   const userId = req.params.userId;
-  console.log(userId)
+
   const q = `
     SELECT * FROM view_user_info
     WHERE id = ?
@@ -11,7 +11,22 @@ export const getUser = (req, res) => {
 
   db.query(q, [userId], (err, data) => {
     if (err) return res.status(500).json(err);
-    const { password, ...info } = data[0];
+    const {...info } = data[0];
+    return res.json(info);
+  });
+};
+
+export const getUserByUsername = (req, res) => {
+  const username = req.params.username;
+
+  const q = `
+    SELECT id FROM users
+    WHERE username = ?
+  `;
+
+  db.query(q, [username], (err, data) => {
+    if (err) return res.status(500).json(err);
+    const {...info } = data[0];
     return res.json(info);
   });
 };
