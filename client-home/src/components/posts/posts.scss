@@ -1,5 +1,20 @@
+@import "../../style.scss";
+
 .posts{
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
+  @include themify($themes) {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    .null {
+      -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+      -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+      box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+      border-radius: 20px;
+      background-color: themed("bg");
+      color: themed("textColor");
+      padding: 30px;
+
+    }
+  }
 }

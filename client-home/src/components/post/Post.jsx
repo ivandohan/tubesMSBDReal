@@ -4,6 +4,7 @@ import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import TextsmsOutlinedIcon from "@mui/icons-material/TextsmsOutlined";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import ReportOutlinedIcon from '@mui/icons-material/ReportOutlined';
 import EmptyProf from "../../assets/profile.png";
 import { Link } from "react-router-dom";
 import Comments from "../comments/Comments";
@@ -60,6 +61,17 @@ const Post = ({ post }) => {
   const handleDelete = () => {
     if(window.confirm("Are you sure about that?")) deleteMutation.mutate(post.id);
   };
+
+  const handleReport = async (postId, reportedBy) => {
+    try {
+      if(window.confirm("Are you sure about that?"))
+        await makeRequest.post("/posts/report", {postId, reportedBy})
+      
+      alert("Post has been reported!")
+    } catch(err) {
+      console.log(err)
+    }
+  }
 
   return (
     <div className="post">
@@ -118,9 +130,9 @@ const Post = ({ post }) => {
             <TextsmsOutlinedIcon />
             See Comments
           </div>
-          <div className="item">
-            <ShareOutlinedIcon />
-            Share
+          <div className="item" onClick={() => handleReport(post.id, currentUser.id)}>
+            <ReportOutlinedIcon />
+            Report
           </div>
         </div>
         {commentOpen && <Comments postId={post.id} />}

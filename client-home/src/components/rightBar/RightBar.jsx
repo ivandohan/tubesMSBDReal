@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { makeRequest } from "../../axios";
 import { useContext } from "react";
 import { AuthContext } from "../../context/authContext";
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import moment from "moment";
 import "./rightBar.scss";
 import { useState } from "react";
@@ -54,7 +54,7 @@ const RightBar = () => {
                       src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
                       alt=""
                     /> */}
-                    <NotificationsActiveIcon />
+                    <NotificationsNoneOutlinedIcon />
                     <p>
                       {log.descr}
                     </p>

@@ -49,6 +49,16 @@
 
         span {
           font-weight: 500;
+
+          .report {
+            margin: 0 5px;
+            border: none;
+            background-color: red;
+            padding: 2px;
+            color: white;
+            border-radius: 9px;
+            cursor: pointer;
+          }
         }
 
         p{

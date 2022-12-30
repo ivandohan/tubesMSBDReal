@@ -50,7 +50,9 @@ const Share = () => {
     e.preventDefault();
     let imgUrl = "";
     let category = isEvent ? "event" : (isAchievement ? "achievement" : "story")
+    console.log("File = " + file);
     if (file) imgUrl = await upload();
+    console.log("img url = " + imgUrl);
     mutation.mutate({ desc, img: imgUrl, category});
     setIsEvent(false)
     setDesc("");

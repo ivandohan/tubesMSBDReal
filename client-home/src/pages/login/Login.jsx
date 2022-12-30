@@ -21,6 +21,7 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     try {
+      login(inputs)
       navigate("/home");
     } catch (err) {
       setErr(err.response.data);

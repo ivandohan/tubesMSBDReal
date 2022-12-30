@@ -26,6 +26,10 @@ import DirDetails from "./pages/DirDetails/DirDetails";
 import SchoolAch from "./pages/ach/SchoolAch";
 import SchDetail from "./pages/schdetail/SchDetail";
 import Orders from "./pages/orders/Orders";
+import Quotes from "./pages/quotes/Quotes";
+import ManageOrder from "./pages/manageorder/ManageOrder";
+import RegRequest from "./pages/regrequest/RegRequest";
+import ReportedPost from "./pages/reportedPost/ReportedPost";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -120,6 +124,18 @@ function App() {
         {
           path: "/achievement",
           element: <SchoolAch />,
+        },
+        {
+          path: "/manage-order",
+          element: <ManageOrder />,
+        },
+        {
+          path: "/registration-request",
+          element: <RegRequest />,
+        },
+        {
+          path: "/reported-post",
+          element: <ReportedPost />,
         },
         {
           path: "/profile/:id",

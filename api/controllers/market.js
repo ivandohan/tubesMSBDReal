@@ -21,6 +21,48 @@ export const getMarketPlace = (req, res) => {
     });
 }
 
+export const getOrderInProcessList = (req, res) => {
+    const token = req.cookies.accessToken;
+        
+    const q =
+    `
+        SELECT * FROM view_orders_inProcess
+    `;
+
+    db.query(q, [], (err, data) => {
+        if (err) return res.status(500).json(err);
+        return res.status(200).json(data);
+    });
+}
+
+export const getOrderOnDeliveryList = (req, res) => {
+    const token = req.cookies.accessToken;
+        
+    const q =
+    `
+        SELECT * FROM view_orders_ondelivery
+    `;
+
+    db.query(q, [], (err, data) => {
+        if (err) return res.status(500).json(err);
+        return res.status(200).json(data);
+    });
+}
+
+export const updateOrderList = (req, res) => {
+    const token = req.cookies.accessToken;
+        
+    const q =
+    `
+        UPDATE orders SET status = ? WHERE id = ?
+    `;
+
+    db.query(q, [req.body.status, req.body.id], (err, data) => {
+        if (err) return res.status(500).json(err);
+        return res.status(200).json(data);
+    });
+}
+
 export const addOrder = (req, res) => {
     const token = req.cookies.accessToken;
     if (!token) return res.status(401).json("Not logged in!");
@@ -30,18 +72,19 @@ export const addOrder = (req, res) => {
         
         const q =
         `
-            CALL add_new_order(?, ?, ?, ?, ?, ?, ?, ?)
+            CALL add_new_order(?, ?, ?, ?, ?, ?, ?, ?, ?)
         `;
 
         const values = [
             req.body.costumerName,
             moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
             req.body.notes,
-            req.body.status,
+            "In Process",
             req.body.productId,
             parseInt(req.body.quantity),
             req.body.price,
             req.body.address,
+            req.body.phoneNumber
         ]
 
         console.log(values)

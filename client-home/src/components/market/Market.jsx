@@ -32,10 +32,10 @@ const Market = () => {
                     <div class="product-image">                
                         <img src={'/upload/' + product.image} alt="" />
                         <div class="info">
-                            <h2>Producer</h2>
+                            <h2>Verified by : </h2>
                             <ul>
                                 <li>
-                                    <Link to={"/profile/" + product.userId} className="link link-color"><strong>{product.producerName}</strong></Link>
+                                    <strong>Admin</strong>
                                 </li>
                             </ul>
                         </div>

@@ -22,7 +22,7 @@ const SchDetail = () => {
         price: prc,
         address: "",
         notes: "",
-        status: "In Process",
+        phoneNumber: null,
     })
 
 
@@ -61,6 +61,9 @@ const SchDetail = () => {
                     <label htmlFor="nm">Name</label>
                     <input type="text" name="costumerName" id="nm" onChange={handleChange}/>
 
+                    <label htmlFor="pn">Phone Number (+62 format)</label>
+                    <input type="text" name="phoneNumber" id="pn" onChange={handleChange}/>
+
                     <label htmlFor="city">Address</label>
                     <input type="text" name="address" placeholder="e.g Jl. Bunga Cempaka, Gg. Alhidayah, No. 76" id="city" onChange={handleChange}/>
 
@@ -71,7 +74,7 @@ const SchDetail = () => {
                 </form>
             </div> :
             <div className="vm">
-                <h2>{respon}</h2>
+                <h2>Pemesanan berhasil dilakukan! Teknis pembayaran akan segera diinformasikan oleh admin melalui Whatsapp!</h2>
                 <Link to={'/craft-market'}>
                     <button>Back</button>
                 </Link>

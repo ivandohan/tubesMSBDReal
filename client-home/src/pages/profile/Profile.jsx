@@ -25,9 +25,9 @@ const Profile = () => {
 
   const userId = parseInt(useLocation().pathname.split("/")[2]);
 
-  const { isLoading, error, data } = useQuery(["user"], () =>
+  const { isLoading, error, data } = useQuery(["userProf"], () =>
     makeRequest.get("/users/find/" + userId).then((res) => {
-      console.log("Data profile")
+      console.log("Prof data = ")
       console.log(res.data)
       return res.data;
     })
@@ -58,7 +58,7 @@ const Profile = () => {
               </div>
             </div>
             {
-              (currentUser.userLevel == "community" || currentUser.userLevel == "admin") &&
+              (data.id == currentUser.id) &&
               <Share />
             }
             <Posts userId={userId} />
