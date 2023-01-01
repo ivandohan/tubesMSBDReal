@@ -63,6 +63,31 @@ export const updateOrderList = (req, res) => {
     });
 }
 
+export const addProducts = (req, res) => {
+    const token = req.cookies.accessToken;
+    if (!token) return res.status(401).json("Not logged in!");
+
+    jwt.verify(token, "secretkey", (err, userInfo) => {
+        if(err) return res.status(403).json("Token is not valid!");
+
+        const q = `INSERT INTO products (productName, authorId, descr, stock, price, image) VALUES (?, ?, ?, ?, ?, ?)`;
+
+        db.query(q, [
+            req.body.productName,
+            req.body.authorId,
+            req.body.desc,
+            req.body.stock,
+            req.body.price,
+            req.body.img,
+        ],
+        (err, data) => {
+            if (err) return res.status(500).json(err);
+            return res.status(200).json("Product has been created.");
+        }
+        )
+    });
+}
+
 export const addOrder = (req, res) => {
     const token = req.cookies.accessToken;
     if (!token) return res.status(401).json("Not logged in!");

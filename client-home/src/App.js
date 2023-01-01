@@ -30,6 +30,7 @@ import Quotes from "./pages/quotes/Quotes";
 import ManageOrder from "./pages/manageorder/ManageOrder";
 import RegRequest from "./pages/regrequest/RegRequest";
 import ReportedPost from "./pages/reportedPost/ReportedPost";
+import AddProducts from "./pages/addproducts/AddProducts";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -136,6 +137,10 @@ function App() {
         {
           path: "/reported-post",
           element: <ReportedPost />,
+        },
+        {
+          path: "/add-products",
+          element: <AddProducts />,
         },
         {
           path: "/profile/:id",

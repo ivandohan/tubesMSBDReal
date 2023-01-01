@@ -79,7 +79,7 @@ const LeftBar = () => {
           currentUser.userLevel == "admin" &&
             <div className="menu">
               <span>Admin Menu</span>
-              <Link className="link">
+              <Link to={'/add-products'} className="link">
                 <div className="item">
                   <AddCircleOutlineOutlinedIcon />
                   <span>Add Products</span>

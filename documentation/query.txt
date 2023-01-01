@@ -158,3 +158,18 @@ BEGIN
     
     INSERT INTO userdetails (userId, name, schLevelId) VALUES (usersNum, user_name, sch_id);
 END
+
+CREATE TRIGGER trigg_insert_new_product
+    AFTER INSERT
+    ON products
+    FOR EACH ROW
+BEGIN
+	DECLARE msg VARCHAR(100);
+    DECLARE author VARCHAR(20);
+    
+    SET author = (SELECT get_user_name(NEW.authorId));
+    SET msg = CONCAT(author, " has added a new product");
+    
+	INSERT INTO log_products (productName, descr) VALUES (NEW.productName, msg);
+    
+END
