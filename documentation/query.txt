@@ -10,7 +10,6 @@ SELECT
 FROM users AS U 
 JOIN userdetails as ud ON (ud.userId = u.id) 
 JOIN schoollevel as sl ON (sl.id = ud.schLevelId)
-WHERE u.username = "test3";
 
 
 SELECT

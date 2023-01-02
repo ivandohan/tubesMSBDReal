@@ -58,6 +58,26 @@ const ManageOrder = () => {
         }
     }
 
+    const handleReject = (id) => {
+        try {
+            if(window.confirm("Are sure about that?"))
+                mutation.mutate({id, status: "rejected"})
+            alert("Order has been updated")
+        } catch(e) {
+            console.log("Error while updating")
+        }
+    }
+
+    const handleSuccess = (id) => {
+        try {
+            if(window.confirm("Are sure about that?"))
+                mutation.mutate({id, status: "success"})
+            alert("Order has been updated")
+        } catch(e) {
+            console.log("Error while updating")
+        }
+    }
+
     const handleSee = (msg) => {
         alert(`Notes Content : \n` + msg)
     }
@@ -119,11 +139,24 @@ const ManageOrder = () => {
                                         <td>{order.quantity}</td>
                                         <td>{order.price}</td>
                                         <td>{order.status}</td>
-                                        <td><button className="see" onClick={() => handleSee(order.notes)}>See</button></td>
-                                        <td><a className="link" href={"http://wa.me/" + order.phoneNumber}>
-                                            <button className="wa">WA</button>
-                                            </a></td>
-                                        <td><button className="delivery" onClick={() => handleDelivery(order.id)}>Delivery</button></td>
+                                        <td>
+                                            <div className="buttons">
+                                                <button className="see salmon" onClick={() => handleSee(order.notes)}>See</button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div className="buttons">
+                                                <a className="link" href={"http://wa.me/" + order.phoneNumber}>
+                                                <button className="wa green">WA</button>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div className="buttons">
+                                                <button className="delivery blue" onClick={() => handleDelivery(order.id)}>Delivery</button>
+                                                <button className="delivery orange" onClick={() => handleReject(order.id)}>Reject</button>
+                                            </div>
+                                        </td>
                                     </tr>
                             ))}
                             {
@@ -135,11 +168,24 @@ const ManageOrder = () => {
                                         <td>{order.quantity}</td>
                                         <td>{order.price}</td>
                                         <td>{order.status}</td>
-                                        <td><button className="see" onClick={() => handleSee(order.notes)}>See</button></td>
-                                        <td><Link className="link">
-                                            <button className="wa">WA</button>
-                                            </Link></td>
-                                        <td><button className="cancel" onClick={() => handleCancel(order.id)}>Cancel</button></td>
+                                        <td>
+                                            <div className="buttons">
+                                                <button className="see salmon" onClick={() => handleSee(order.notes)}>See</button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div className="buttons">
+                                                <a className="link" href={"http://wa.me/" + order.phoneNumber}>
+                                                <button className="wa green">WA</button>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div className="buttons">
+                                                <button className="see suc" onClick={() => handleCancel(order.id)}>Success</button>
+                                                <button className="see red" onClick={() => handleCancel(order.id)}>Cancel</button>
+                                            </div>
+                                        </td>
                                     </tr>
                             ))}
                         </tbody>

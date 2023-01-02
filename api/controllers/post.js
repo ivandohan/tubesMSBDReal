@@ -46,7 +46,7 @@ export const getEventPosts = (req, res) => {
     `SELECT * FROM view_general_posts WHERE userId = ?`
     :
     `
-      SELECT * FROM view_event_posts
+    SELECT * FROM view_general_posts WHERE category="event"
     `;
 
     // LEFT JOIN relationships AS r ON (p.userId = r.followedUserId) WHERE r.followerUserId= ? OR p.userId =?
@@ -74,7 +74,7 @@ export const getAchPosts = (req, res) => {
     `SELECT * FROM view_achievement_posts WHERE userId = ?`
     :
     `
-      SELECT * FROM view_achievement_posts
+    SELECT * FROM view_general_posts WHERE category="achievement"
     `;
 
     // LEFT JOIN relationships AS r ON (p.userId = r.followedUserId) WHERE r.followerUserId= ? OR p.userId =?

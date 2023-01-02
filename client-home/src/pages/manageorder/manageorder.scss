@@ -40,28 +40,48 @@
                     color: themed("textColor");
                 }
 
-                .delivery {
-                    width: 70px;
-                    border: none;
-                    background-color: blue;
-                }
+                .buttons {
+                    display: flex;
+                    gap: 5px;
 
-                .see {
-                    width: 70px;
-                    border: none;
-                    background-color: rgb(139, 163, 3);
-                }
+                    .blue {
+                        background-color: blue;
+                    }
 
-                .wa {
-                    width: 80px;
-                    border: none;
-                    background-color: rgb(16, 190, 16);
-                }
+                    .orange {
+                        background-color: orange;
+                    }
 
-                .cancel {
-                    width: 70px;
-                    border: none;
-                    background-color: rgb(190, 57, 16);
+                    .red {
+                        background-color: red;
+                    }
+
+                    .green {
+                        background-color: rgb(16, 190, 16);
+                    }
+
+                    .suc {
+                        background-color: #4FC3A1;
+                    }
+
+                    .salmon {
+                        background-color: salmon;
+                    }
+
+                    .delivery {
+                        width: 70px;
+                        border: none;
+                    }
+
+                    .see {
+                        width: 70px;
+                        border: none;
+                    }
+    
+                    .wa {
+                        width: 80px;
+                        border: none;
+                    }
                 }
             }
             

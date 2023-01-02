@@ -1,0 +1,95 @@
+INSERT INTO users (username, password, userLevel, status) 
+VALUES 
+("khaerudin", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("wawan_hendri", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("yulianus", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("nurkholis", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("anisah", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("aris_hendaris", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("maryadi", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("tuti_annisa", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("hendra_gunawan", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("galih_pratama", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("indra_hermawan", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted")
+
+
+INSERT INTO users (username, password, userLevel, status) 
+VALUES 
+("dulkodir", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("gina_andriani", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("reza_marpaung", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("dede_ridoatul", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("dwi_saskia", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("mutia_hertati", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("ari_luqman", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("muhyi_hifduddin", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("murni_surtati", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("rahmat_saladin", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("eva_rahayu", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("nicholas_salim", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("yeni_wulandari", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted")
+
+
+INSERT INTO users (username, password, userLevel, status) 
+VALUES 
+("agus_hartanto", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("ahmad_efendi", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("masri_mursyid", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("nova_rianti", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("kristina_surwati", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("agung_gunawan", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("muliana_jovi", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("adiputra_pratama", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("burhandu", "viewer", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "accepted"),
+("nobianti_nara", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("reza_arab", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("indra_kezuma", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("kamaludin", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("gina_adriani", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("bertrand", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("dwi_nyoto", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("bunga_citra", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted")
+
+
+INSERT INTO users (username, password, userLevel, status) 
+VALUES 
+("jamaluddin", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("muhammad_ilham", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("sri_mutia", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("arya", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("vina", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("nurhan_nico", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("khaerudin_kamal", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("m_iqbal", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("ervina", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("leni_herlina", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("rizyanti", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("hasanah", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("sisca_novalia", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("eva_nuryana", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("endri_yeni", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("hendra_mario", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("novia_intan", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted")
+
+
+INSERT INTO users (username, password, userLevel, status) 
+VALUES 
+("arie_mazerwansyah", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("sugiyanto", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("antoni_angwin", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("h_masyur", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("syaifuddin", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("ahmad_solahuddin", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("ahmad_hudori", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("suherman", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("susilawati", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("efriyenti", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("asih_wisyati", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("madya", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("h_muslim", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("arief_chairuddien", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("joko_surawu", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("eni_hastuti", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("hendrawan", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted"),
+("desi_herisandi", "$2a$10$aEfjmvHzbKOGj9BXmZFuX.ec9AqPHrtIVcEwc.u8s19ZIWbedWfAi", "viewer", "accepted")
+
